@@ -1,15 +1,10 @@
 
 public class misal5 {
 public static void main(String[] args) {
-	double a=2;
-	double b=7;
-	double c=3;
-	double d=b*b-4*a*c;
-	System.out.println(d);
-	double x1 =(-b+Math.sqrt(d))/(2*a);
-	double x2 =(-b-Math.sqrt(d))/(2*a);
-	System.out.println(x1);
-	System.out.println(x2);
-	
+	String a="I want",b;
+	b=a+" to go home.";
+	int c=b.length();
+	System.out.println(b);
+	System.out.println(c);
 }
 }
