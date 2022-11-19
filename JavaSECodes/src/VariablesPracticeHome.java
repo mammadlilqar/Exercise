@@ -1,4 +1,3 @@
-
 public class VariablesPracticeHome {
 	public static void main(String[] args) {
 		int age=25;
@@ -11,7 +10,7 @@ public class VariablesPracticeHome {
 	     System.out.println("carPrice: "+carPrice);
 	     String employeeName="Məlik";
 	     System.out.println("employeeName: "+employeeName);
-	     
+
 	}
 
 }
