@@ -2,15 +2,9 @@ package ders4.operatorlar;
 
 public class operatorlar {
 	public static void main(String[] args) {
-		
-	int age=12;
-	if(age>=18) {
-		System.out.println("okey");
-	}
-	else {
-		System.out.println("no");
-	}
-		  
-	}
 
+int a=3,b=2+1;
+int  c=(a>=b)? 4:85;
+ System.out.println(c);
+	}
 }
