@@ -13,6 +13,6 @@ public static void main(String[] args) {
 	e1.password="Nadir1993";
 	e1.phone="0718345678";
 	
-	e1.printinfo();
+	e1.printInfo();
 }
 }

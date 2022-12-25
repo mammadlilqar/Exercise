@@ -5,7 +5,8 @@ int salary;
 String department;
 String username;
 String password;
-void printinfo() {
+
+void printInfo() {
 	super.printInfo();
 	System.out.println("salary:"+salary);
 	System.out.println("department:"+ department);
