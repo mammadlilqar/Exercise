@@ -1,6 +1,7 @@
 package ders_14;
 
 public class Employee extends Person{
+	
 int salary;
 String department;
 String username;

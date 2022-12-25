@@ -12,6 +12,7 @@ public static void main(String[] args) {
 	e1.username="NadirMammedov";
 	e1.password="Nadir1993";
 	e1.phone="0718345678";
+	e1.department="dea";
 	
 	e1.printInfo();
 }
