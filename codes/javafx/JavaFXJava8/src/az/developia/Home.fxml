@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.developia.HomeController">
+   <children>
+      <VBox layoutX="15.0" layoutY="14.0" prefHeight="470.0" prefWidth="570.0">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="472.0" spacing="5.0">
+               <children>
+                  <Label text="Ad : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookName" promptText="Kitabın adı">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="13.0" layoutY="13.0" text="Qiymət : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="bookPrice" layoutX="51.0" layoutY="13.0" promptText="Kitabın qiyməti">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="472.0" spacing="5.0">
+               <children>
+                  <Label text="Dİli : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="bookLanguage" prefWidth="150.0" />
+                  <Label layoutX="13.0" layoutY="13.0" text="Nəşr tarixi : ">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="bookPublishDate" />
+               </children>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="49.0" prefHeight="39.0" prefWidth="472.0" spacing="5.0">
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#saveBook" style="-fx-background-color: green;" text="Yadda saxla" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deleteBook" style="-fx-background-color: red;" text="Sil" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="booksTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="138.0" text="Ad" />
+                  <TableColumn fx:id="priceColumn" prefWidth="78.0" text="Qiymət" />
+                  <TableColumn fx:id="languageColumn" prefWidth="117.0" text="Dil" />
+                  <TableColumn fx:id="publishDateColumn" prefWidth="144.0" text="Nəşr tarixi" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
