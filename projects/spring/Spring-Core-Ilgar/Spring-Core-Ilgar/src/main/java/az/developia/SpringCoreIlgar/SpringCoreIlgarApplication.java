@@ -16,12 +16,9 @@ public class SpringCoreIlgarApplication {
 	   System.out.println(comp.getPrice());
 	   System.out.println(comp.getRam().getBrands());
        
-	   Employee e=a.getBean(Employee.class);
-	   System.out.println(e.getAge());
-	   System.out.println(e.getId());
-	   System.out.println(e.getSalary());
-	   System.out.println(e.getName());
-	   System.out.println(e.getComputer().getBrand());
+	   Home home1=a.getBean(Home.class);
+	   Home home2=a.getBean(Home.class);
+
 	}
 
 }
