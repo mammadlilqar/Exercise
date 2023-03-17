@@ -8,20 +8,14 @@ import org.springframework.context.ApplicationContext;
 public class SpringCoreIlqarApplication {
 
 	public static void main(String[] args) {
-	ApplicationContext c=SpringApplication.run(SpringCoreIlqarApplication.class, args);
-	Person p=c.getBean(Person.class);
-	System.out.println(p.getId());
-	System.out.println(p.getName());
-	System.out.println(p.getSurname());
-	System.out.println(p.getSalary());
-	System.out.println(p.getAge());
-	
-	String[] beans=c.getBeanDefinitionNames();
-	for (String a : beans) {
-		System.out.println(a);
+		ApplicationContext a = SpringApplication.run(SpringCoreIlqarApplication.class, args);
+		Developer d = a.getBean("developer", Developer.class);
+		System.out.println(d.getName());
+		System.out.println(d.getSalary());
+		System.out.println(d.getDepartment());
+		System.out.println(d.getComputer().getModel());
 		
+		MyConfiguration m = a.getBean("myConfiguration", MyConfiguration.class);
+         System.out.println(m.getDbUrl());
 	}
-	}
-
-
 }
