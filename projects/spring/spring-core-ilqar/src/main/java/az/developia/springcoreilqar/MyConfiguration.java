@@ -16,14 +16,6 @@ public String getDbUrl() {
 
 
 @Bean
-public Person myPerson() {
-	Person p=new Person();
-	p.setName("Ilqar");
-	p.setSurname("Mammadli");
-	return p;
-}
-
-@Bean
 public Computer myComputer() {
 	Computer c=new Computer();
 	c.setModel("Asus");

@@ -14,8 +14,11 @@ public class SpringCoreIlqarApplication {
 		System.out.println(d.getSalary());
 		System.out.println(d.getDepartment());
 		System.out.println(d.getComputer().getModel());
+		d.setSalary(3000);
+		System.out.println(d.getSalary());
 		
-		MyConfiguration m = a.getBean("myConfiguration", MyConfiguration.class);
-         System.out.println(m.getDbUrl());
+		Developer d2 = a.getBean(Developer.class);
+		System.out.println(d2.getSalary());
+
 	}
 }

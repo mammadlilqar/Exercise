@@ -1,43 +1,26 @@
 package az.developia;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-
-import javax.swing.JOptionPane;
-
+import az.developia.service.BookService;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.text.Text;
 
 public class BooksController {
-	
+	BookService service=new  BookService();
 	@FXML
-	private TextField bookName,bookAuthor;
-	
- 
-	
-	// bookPageCount
-	
-	public void saveBook() {
-		String name=bookName.getText();
-		String author=bookAuthor.getText();
-		 
-		// burada bu kitab melumatini bzaya yazmaq kodlarini yaz
-		try {
-			Connection conn=DriverManager
-					.getConnection
-					("jdbc:mysql://localhost:3306/java9","root","1234");
-			
-			Statement st=conn.createStatement();
-			st.executeUpdate("insert into books (name,author) values ('"+
-			name+"','"+author+"');");
-			conn.close();
-			
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	
-	
-	
+	public TextField text;
+    public void add() {
+    	String value=text.getText();
+    	Book b=new Book();
+    	b.setData(value);
+    	service.add(b);
+    }
+    public void remove() {
+    	
+    }
 }

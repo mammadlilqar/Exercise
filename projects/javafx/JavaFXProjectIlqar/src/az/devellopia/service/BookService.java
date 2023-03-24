@@ -27,8 +27,22 @@ public void delete(Integer bookId) {
 
 public List<Book> findAllSearch(String value){
 
-	 ArrayList<Book>  books=bookRepository.findAll();
-	List<Book> booksFiltered= books.stream().filter(n->n.getName().contains(value)).collect(Collectors.toList());
+	List<Book>  books=bookRepository.findAllSearch(value);
+	
 	 
-return booksFiltered;
+return books;
+}
+
+public Integer findAllSearchCount(String Value) {
+
+	Integer bookCount=bookRepository.findAllSearchCount(Value);
+	if(bookCount>3) {
+		return -1;
+	}
+	return bookCount;
+}
+
+public void update(Book b) {
+	bookRepository.update(b);
+	
 }}
