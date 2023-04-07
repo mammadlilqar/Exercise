@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeLeaf.org">
 <head>
-  <title>Telebeler</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="icon"  th:href="@{/images/home.png}">
+<title>Telebeler</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="icon" th:href="@{/images/home.png}">
 </head>
-<body >
-<a th:href="@{/home}" style="color: blue" >Ana səhifəyə keçid edin</a>
- <table class="table">
- <thead>
- <tr>
-<th>Id</th>
-<th>Ad</th>
-<th>Soyad</th>
-<th>Email</th>
-</tr>
- </thead>
- <tbody>
- <tr th:each="student:${myStudents}">
- 
- <td  th:text="${student.id}"></td>
- <td  th:text="${student.name}"></td>
- <td  th:text="${student.surname}"></td>
- <td  th:text="${student.id}"></td>
-  </tr>
- 
- </tbody>
- 
- </table>
+<body style="padding: 20px">
+	<a th:href="@{/home}" class="btn btn-primary">Ana səhifəyə keçid edin</a>
+|   <a th:href="@{/open-save-student-page}" class="btn btn-success">Yeni
+		tələbə</a>
+		<hr>
+	<form>
+		<input name="query" th:value="${searchText}"> <input
+			type="submit" value="axtar">
+	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Ad</th>
+				<th>Soyad</th>
+				<th>Telefon</th>
+				<th>Ünvan</th>
+				<th>Email</th>
+				<th>Təvəllüd</th>
+				<th>Sektor</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
 
-<hr>
+			<tr th:each="student:${myStudents}">
+
+				<td th:text="${student.id}"></td>
+				<td th:text="${student.name}"></td>
+				<td th:text="${student.surname}"></td>
+				<td th:text="${student.phone}"></td>
+				<td th:text="${student.address}"></td>
+				<td th:text="${student.email}"></td>
+				<td th:text="${student.birthday}"></td>
+				<td th:text="${student.sector}"></td>
+				<td  >  <a th:href="@{/students/{id}(id=${st.id})}">Sil</a> </td>
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<hr>
 </body>
 </html>
