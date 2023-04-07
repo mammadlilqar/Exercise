@@ -8,6 +8,7 @@ public class SpringMvcIlqarApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringMvcIlqarApplication.class, args);
+	
 	}
 
 }
